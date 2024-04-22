@@ -2,6 +2,7 @@
 import { Typography as Text } from "catalyst-ui";
 import React, { ReactElement } from 'react';
 import styles from './Board.module.scss';
+// import styles from './Board.module.scss';
 
 export interface SquareProps {
   children?: React.ReactNode;
@@ -36,7 +37,7 @@ export const Board = ({boardState, boardSize}: BoardProps): ReactElement => {
       squares.push(renderSquare(row, j));
     }
     return (
-      <div key={`row-${row}`} className={styles['board-row']}>
+      <div key={`row-${row}`}  className="w-full h-20 bg-blue-500 flex justify-center items-center text-white">
         {squares}
       </div>
     );
