@@ -1,11 +1,7 @@
-// import { Animation } from '@arwes/animated';
 // import Queen from './queen.svg'
+import { Typography as Text } from "catalyst-ui";
+import React, { ReactElement } from 'react';
 import styles from './Board.module.scss';
-import React, {ReactElement, useEffect, useMemo, useRef, useState, useCallback} from 'react';
-import {FrameSVG, useFrameSVGAssemblingAnimation} from "@arwes/react-frames";
-import {Text} from "@arwes/react";
-import {Button} from "@/components/ui/button";
-import {FrameSVGPathGeneric} from "@arwes/react";
 
 export interface SquareProps {
   children?: React.ReactNode;
@@ -26,7 +22,7 @@ export const Board = ({boardState, boardSize}: BoardProps): ReactElement => {
   const renderSquare = (i: number, j: number) => {
     const key = `${i},${j}`;
     return (
-      <div key={`${i},${j}`} className={`${styles.square} ${boardState?.has(key) ? styles.active : null}`}>
+      <div key={key} className={`${styles.square} ${boardState?.has(key) ? styles.active : null}`}>
         <Text>
           {i}, {j}
         </Text>

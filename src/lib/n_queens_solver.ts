@@ -1,4 +1,3 @@
-import {cloneDeep, times, remove, noop} from 'lodash';
 import Debug from 'debug';
 
 const dbg = Debug('RecNQueens');
@@ -11,19 +10,13 @@ interface SolverStats {
 }
 
 export type QueenCoordinates = [number, number];
-type BoardState = number[][]
-type MoveTypes = 'placed' | 'removed' | 'solved'
-type MoveSequence = MoveTypes[]
-
 
 export default class NQueensSolver {
-  board: number[][];
-  queens: QueenCoordinates[] = []; // [x, y] coordinates of queens
+  private board: number[][];
+  private queens: QueenCoordinates[] = [];
 
   solutions: QueenCoordinates[][] = [];
-  moves: QueenCoordinates[][] = [];
-  moveSequence: MoveSequence = []
-
+  boardStates: string[] = []; // Array to store the string representations of board states
   stats: SolverStats = {
     steps: 0,
     removed: 0,
@@ -31,102 +24,65 @@ export default class NQueensSolver {
     solved: 0
   }
 
-  constructor(n: number) {
-    this.board = times(n, () => times(n, () => 0));
+  constructor(private readonly size: number) {
+    this.board = Array.from({ length: size }, () => Array(size).fill(0));
   }
 
   solve(row = 0): NQueensSolver {
-    // Board Base Cases
-    if (this.board.length === 2 || this.board.length === 3) {
-      return this;
+    if (this.size === 2 || this.size === 3) {
+      return this; // No solution possible
     }
-    // SOLUTION FOUND
-    if (row === this.board.length) {
+    if (row === this.size) {
       dbg('Solution found!');
-      this.solutionFound(this.queens)
+      this.solutions.push(this.queens.map(queen => [...queen]));
+      this.stats.solved++;
+      this.boardStates.push(this.printBoard()); // Save final state for each solution
       return this;
     }
-    // SOLVER, Recursive Back Tracking
-    for (let i = 0; i < this.board.length; i++) {
-      if (this.placeQueen(row, i)) {
+    for (let col = 0; col < this.size; col++) {
+      if (this.canPlaceQueen(row, col)) {
+        this.placeQueen(row, col);
         this.solve(row + 1);
-        this.removeQueen(row, i); // <--- Don't forget this
+        this.removeQueen(row, col);
       }
     }
     return this;
   }
 
-  solutionFound(solution: number[][]) {
-    const _solution = cloneDeep(solution)
-    // @ts-ignore
-    this.solutions.push(_solution);
-    this.stats.solved++
-    this.moveSequence.push('solved')
-  }
-
-  /* The `removeQueen` method is responsible for removing a queen from the chessboard at the specified
-  position (x, y). It sets the value at the specified position in the `board` array to 0, indicating
-  that there is no queen at that position. It also removes the queen from the `queens` array by
-  using the `remove` function from the lodash library. */
-  removeQueen(x: number, y: number): void {
-    dbg(`Removing queen at ${x}, ${y}`);
-    this.board[x][y] = 0;
-    remove(this.queens, ([x2, y2]: number[]) => x == x2 && y == y2);
-    this.stats.removed++
-    this.moveSequence.push('removed')
-    this.moves.push(cloneDeep(this.queens));
-  }
-
-  /**
-   * Returns true if queen was placed, false if not.
-   * MUTATES this.board. this.queens
-   * @param  {number} x2 row to place queen on
-   * @param  {number} y2 column to place queen on
-   * @return {boolean}
-   */
-  placeQueen(x2: number, y2: number): boolean {
-    dbg(`Placing queen at ${x2}, ${y2}`);
-    if (this.queens.length !== 0) {
-      for (let i = 0; i < this.queens.length; i++) {
-        let [x1, y1]: number[] = this.queens[i];
-        const slope = (y2 - y1) / (x2 - x1);
-        // horizontal, vertical, diagonal, same point
-        if (slope == Infinity || slope == 0 || Math.abs(slope) == 1 || Number.isNaN(slope)) {
-          dbg(`Queen cannot be placed at ${x2}, ${y2} X ${x1}, ${y1} because of slope ${slope}`);
-          return false;
-        }
+  private canPlaceQueen(row: number, col: number): boolean {
+    for (const [qRow, qCol] of this.queens) {
+      if (col === qCol || // Same column
+          qRow - qCol === row - col || // Same major diagonal
+          qRow + qCol === row + col) { // Same minor diagonal
+        return false;
       }
     }
-    this.board[x2][y2] = 1;
-    this.queens.push([x2, y2]);
-    this.moves.push(cloneDeep(this.queens));
-    this.moveSequence.push('placed')
-    this.stats.placed++
     return true;
   }
 
-  showSolutions(x: number | null = null): void {
-    if (x === null) {
-      this.solutions.map(this.buildSolutionBoard);
-    } else {
-      const solution = this.solutions[x];
-      console.log(`Solution ${x}:`);
-      console.log(solution);
-      const solutionBoard = this.buildSolutionBoard(solution);
-      console.log(this.printBoard(solutionBoard));
-    }
+  private placeQueen(row: number, col: number): void {
+    this.board[row][col] = 1;
+    this.queens.push([row, col]);
+    this.stats.placed++;
+    this.boardStates.push(this.printBoard()); // Save state after placing a queen
   }
 
-  printBoard(board: number[][]): string {
-    return board.map(row => row.join(' ')).join('\n');
+  private removeQueen(row: number, col: number): void {
+    this.board[row][col] = 0;
+    this.queens = this.queens.filter(([qRow, qCol]) => qRow !== row || qCol !== col);
+    this.stats.removed++;
+    this.boardStates.push(this.printBoard()); // Save state after removing a queen
   }
 
-  buildSolutionBoard(solution: number[][]): number[][] {
-    const board = times(this.board.length, () => times(this.board.length, () => 0));
-    solution.map(([x, y]) => {
-      board[x][y] = 1;
+  private printBoard(): string {
+    return this.board.map(row => row.join(' ')).join('\n');
+  }
+
+  getSolutionBoards(): string[] {
+    return this.solutions.map(solution => {
+      const board = Array.from({ length: this.size }, () => Array(this.size).fill('.'));
+      solution.forEach(([x, y]) => board[x][y] = 'Q');
+      return board.map(row => row.join(' ')).join('\n');
     });
-    return board;
   }
 }
-
