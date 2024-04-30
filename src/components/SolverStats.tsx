@@ -1,6 +1,14 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "catalyst-ui";
 
-export const StatsComponent = ({}) => {
+// Card,
+// CardHeader,
+// CardFooter,
+// CardTitle,
+// CardDescription,
+// CardContent,
+
+
+export const SolverStats = ({}) => {
 
   return (
     <Card>
@@ -15,9 +23,5 @@ export const StatsComponent = ({}) => {
   );
 
 }
-  // Card,
-  // CardHeader,
-  // CardFooter,
-  // CardTitle,
-  // CardDescription,
-  // CardContent,
+
+export default SolverStats;

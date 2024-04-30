@@ -1,62 +1,41 @@
 // import Queen from './queen.svg'
-import { Typography as Text } from "catalyst-ui";
-import React, { ReactElement } from 'react';
-import styles from './Board.module.scss';
-// import styles from './Board.module.scss';
+import { Card, CardContent } from "catalyst-ui";
+import { ReactElement, useMemo } from "react";
+import { useBoard } from "./BoardContext";
 
-export interface SquareProps {
-  children?: React.ReactNode;
+interface BoardPositionNodeProps {
+  x: number;
+  y: number;
 }
 
-export interface FrameProps {
-  children?: React.ReactNode;
-  className?: string;
-}
+const BoardPositionNode = ({ x, y }: BoardPositionNodeProps) => {
 
-export interface BoardProps {
-  boardState?: Map<string, boolean>;
-  boardStateUpdate?: Function;
-  boardSize: number;
-}
+  const { board: { state: currentQueenLocations } } = useBoard();
 
-export const Board = ({boardState, boardSize}: BoardProps): ReactElement => {
-  const renderSquare = (i: number, j: number) => {
-    const key = `${i},${j}`;
-    return (
-      <div key={key} className={`${styles.square} ${boardState?.has(key) ? styles.active : null}`}>
-        <Text>
-          {i}, {j}
-        </Text>
-      </div>
-    )
-  };
-
-  const renderRow = (row: number) => {
-    let squares = [];
-    for (let j = 0; j < boardSize; j++) {
-      squares.push(renderSquare(row, j));
-    }
-    return (
-      <div key={`row-${row}`}  className="w-full h-20 bg-blue-500 flex justify-center items-center text-white">
-        {squares}
-      </div>
-    );
-  };
-
-
-  const renderBoard = () => {
-    let rows = [];
-    for (let i = 0; i < boardSize; i++) {
-      rows.push(renderRow(i));
-    }
-    return rows;
-  };
+  const hasQueen = useMemo(() => currentQueenLocations?.has(`${x},${y}`), [currentQueenLocations, x, y]);
 
   return (
-    <div className={styles.board}>
-      {renderBoard()}
+    <div className={`w-10 h-10 border ${hasQueen ? 'bg-primary' : null}`}>
+      {hasQueen && <img src="queen.svg" alt="queen" />}
     </div>
   );
-}
+};
+
+export const Board = ({}): ReactElement => {
+  const { config: { size: [boardSize] } } = useBoard();
+  return (
+    <Card className="">
+      <CardContent>
+        {Array.from({ length: boardSize }, (_, x) => (
+          <div className="flex">
+            {Array.from({ length: boardSize }, (_, y) => (
+              <BoardPositionNode x={x} y={y} />
+            ))}
+          </div>
+        ))}
+      </CardContent>
+    </Card>
+  );
+};
 
 export default Board;

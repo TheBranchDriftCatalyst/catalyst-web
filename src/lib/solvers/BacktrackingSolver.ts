@@ -1,6 +1,10 @@
 import Debug from 'debug';
+import { cloneDeep } from 'lodash';
+import NQueensSolverInterface from './NQueensSolver';
 
 const dbg = Debug('RecNQueens');
+
+type Point = [x: number, y: number];
 
 interface SolverStats {
   steps: number,
@@ -9,26 +13,30 @@ interface SolverStats {
   solved: number
 }
 
-export type QueenCoordinates = [number, number];
+export type QueenCoordinates = Point
 
-export default class NQueensSolver {
-  private board: number[][];
-  private queens: QueenCoordinates[] = [];
+export default class BacktrackingSolver implements NQueensSolverInterface<BacktrackingSolver> {
+  // private board: BoardState;
+  private queens = [];
 
   solutions: QueenCoordinates[][] = [];
-  boardStates: string[] = []; // Array to store the string representations of board states
   stats: SolverStats = {
     steps: 0,
     removed: 0,
     placed: 0,
     solved: 0
   }
+  private onMove: ((state: QueenCoordinates[]) => void) | undefined;
 
   constructor(private readonly size: number) {
-    this.board = Array.from({ length: size }, () => Array(size).fill(0));
+    // this.board = Array.from({ length: size }, () => Array(size).fill(0));
   }
 
-  solve(row = 0): NQueensSolver {
+  _bindOnMove: (cb: (state: QueenCoordinates[]) => void) => void = (cb) => {
+    this.onMove = cb;
+  };
+
+  solve(row = 0): BacktrackingSolver {
     if (this.size === 2 || this.size === 3) {
       return this; // No solution possible
     }
@@ -36,7 +44,7 @@ export default class NQueensSolver {
       dbg('Solution found!');
       this.solutions.push(this.queens.map(queen => [...queen]));
       this.stats.solved++;
-      this.boardStates.push(this.printBoard()); // Save final state for each solution
+      this.onMove && this.onMove(cloneDeep(this.queens));
       return this;
     }
     for (let col = 0; col < this.size; col++) {
@@ -61,21 +69,17 @@ export default class NQueensSolver {
   }
 
   private placeQueen(row: number, col: number): void {
-    this.board[row][col] = 1;
+    // this.board[row][col] = 1;
     this.queens.push([row, col]);
     this.stats.placed++;
-    this.boardStates.push(this.printBoard()); // Save state after placing a queen
+    this.onMove && this.onMove(cloneDeep(this.queens));
   }
 
   private removeQueen(row: number, col: number): void {
-    this.board[row][col] = 0;
+    // this.board[row][col] = 0;
     this.queens = this.queens.filter(([qRow, qCol]) => qRow !== row || qCol !== col);
     this.stats.removed++;
-    this.boardStates.push(this.printBoard()); // Save state after removing a queen
-  }
-
-  private printBoard(): string {
-    return this.board.map(row => row.join(' ')).join('\n');
+    this.onMove && this.onMove(cloneDeep(this.queens));
   }
 
   getSolutionBoards(): string[] {

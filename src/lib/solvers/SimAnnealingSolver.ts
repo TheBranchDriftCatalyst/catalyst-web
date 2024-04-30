@@ -1,5 +1,5 @@
-import { cloneDeep, times, remove } from "lodash";
 import Debug from "debug";
+import { cloneDeep, times } from "lodash";
 
 const dbg = Debug("SimAnnealNQueens");
 
@@ -50,7 +50,7 @@ export default class SimAnnealNQueensSolver {
 
     for (let step = 0; step < maxSteps; step++) {
       boardStates.push(current.map((val, idx) => [idx, val]));
-      
+
       if (currentCost === 0) {
         this.solutionFound(current);
         break;

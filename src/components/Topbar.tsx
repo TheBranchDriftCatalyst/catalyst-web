@@ -2,12 +2,11 @@
 
 import { Button, Menubar, MenubarMenu, MenubarTrigger, useLocalStorageState } from "catalyst-ui";
 import { ArrowLeftToLine, ArrowRightIcon } from "lucide-react";
+import { useBoard } from "./BoardContext";
 
 export const TopBar = () => {
-  const [barCollapsed, setBarCollapsed] = useLocalStorageState(
-    "topbar:hidden",
-    false,
-  );
+  const [barCollapsed, setBarCollapsed] = useLocalStorageState("top-bar:hidden", false);
+  const {solver: { start: startSolver }} = useBoard()
 
 
   if (barCollapsed) {
@@ -31,7 +30,7 @@ export const TopBar = () => {
         </MenubarTrigger>
       </MenubarMenu>
       <MenubarMenu>
-        <MenubarTrigger onClick={() => null}>Solve!</MenubarTrigger>
+        <MenubarTrigger onClick={startSolver}>Solve!</MenubarTrigger>
       </MenubarMenu>
     </Menubar>
   );
