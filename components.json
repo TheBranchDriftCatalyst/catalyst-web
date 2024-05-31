@@ -10,7 +10,10 @@
     "cssVariables": true
   },
   "aliases": {
-    "components": "@catalyst-ui/components",
-    "utils": "@catalyst-ui/utils"
+    "components": "@/catalyst-ui/components",
+    "ui": "@/catalyst-ui/ui",
+    "utils": "@/catalyst-ui/utils"
   }
 }
+
+
