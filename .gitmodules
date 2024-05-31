@@ -1,0 +1,3 @@
+[submodule "@catalyst-ui"]
+	path = @catalyst-ui
+	url = git@github.com:TheBranchDriftCatalyst/catalyst-ui.git

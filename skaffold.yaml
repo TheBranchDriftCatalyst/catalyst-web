@@ -1,0 +1,15 @@
+apiVersion: skaffold/v2beta26
+kind: Config
+metadata:
+  name: catalyst-web
+# build:
+#   artifacts:
+#   - image: hello
+#     docker:
+#       dockerfile: Dockerfile
+deploy:
+  helm:
+    releases:
+    - name: postgresql
+      chartPath: bitnami/postgresql
+

@@ -17,7 +17,8 @@
     "baseUrl": ".",
     "types": ["@testing-library/jest-dom"],
     "paths": {
-      "@/*": ["./src/*"]
+      "@/catalyst-web/*": ["./src/*"],
+      "@/catalyst-ui/*": ["./@catalyst-ui/lib/*"],
     },
     "plugins": [
       {
