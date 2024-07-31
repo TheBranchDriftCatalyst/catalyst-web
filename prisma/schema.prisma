@@ -1,0 +1,76 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+  // previewFeatures = ["prismaSchemaFolder"]
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id            String         @id @default(uuid())
+  email         String         @unique
+  name          String?
+  decks         Deck[]
+  userQuestions UserQuestion[]
+}
+
+model MCTQuestion {
+  id   String @id @default(uuid())
+  text String
+
+  deckId String?
+  deck   Deck?   @relation(fields: [deckId], references: [id])
+
+  userQuestions UserQuestion[]
+  answers       MCTAnswer[]
+
+  // correctAnswerId String?
+  // correctAnswer   MCTAnswer? @relation("CorrectAnswer", fields: [correctAnswerId], references: [id])
+}
+
+model MCTAnswer {
+  id        String  @id @default(uuid())
+  text      String
+  isCorrect Boolean
+
+  questionId String
+  question   MCTQuestion @relation(fields: [questionId], references: [id])
+
+  @@unique([questionId, text]) // Ensure each question-answer text pair is unique
+}
+
+model UserQuestion {
+  id          String   @id @default(uuid())
+  nextReview  DateTime
+  interval    Int
+  easeFactor  Float
+  repetitions Int
+
+  // FKs
+  questionId String
+  question   MCTQuestion @relation(fields: [questionId], references: [id])
+
+  // answerId String?
+  // answer   MCTAnswer? @relation(fields: [answerId], references: [id])
+
+  User   User?   @relation(fields: [userId], references: [id])
+  userId String?
+
+  @@unique([userId, questionId]) // Ensure each user-question pair is unique
+}
+
+model Deck {
+  id          String        @id @default(uuid())
+  name        String
+  description String?
+  // userId   Int
+  // user     User       @relation(fields: [userId], references: [id])
+  questions   MCTQuestion[]
+  User        User?         @relation(fields: [userId], references: [id])
+  userId      String?
+}

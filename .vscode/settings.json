@@ -1,0 +1,22 @@
+{
+    "cSpell.words": [
+      "danki",
+      "frameloop",
+      "GLTF",
+      "Rocinante",
+      "tailwindcss"
+    ],
+    "CodeGPT.Autocomplete.enabled": false,
+    "files.exclude": {
+      "**/.git": true,
+      "**/.svn": true,
+      "**/.idea": true,
+      "**/.next": true,
+      "**/.hg": true,
+      "**/CVS": true,
+      "**/.DS_Store": true,
+      "**/.swc": true,
+      "**/Thumbs.db": true,
+      "**/.ruby-lsp": true
+    }
+}

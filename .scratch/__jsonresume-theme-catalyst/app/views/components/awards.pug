@@ -1,0 +1,8 @@
+if resume.awards && resume.awards.length
+  .container.awards-container
+    +title("Awards", 'fa-light fa-trophy')
+    each award in resume.awards
+      section.item
+        +section-header(null, award.title, null, null, award.icon, award.awarder)
+        if award.summary
+          p.summary #{award.summary}

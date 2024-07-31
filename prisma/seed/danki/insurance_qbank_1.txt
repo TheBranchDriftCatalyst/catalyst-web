@@ -1,0 +1,276 @@
+1. In an insurance agreement, what does the insurer promise to compensate the insured for in the event of a contingent or unforeseen incident?
+a) Loss
+b) Damage
+c) Liability
+D) All of the above
+
+2. Any contingent or unknown event, whether past or future, which may damnify (cause injury to) a person having an insurable interest, or create a liability against him, may be insured against except:
+a) A lottery or its outcome
+b) A policy executed by way of gaming or wagering
+c) Coverage for the payment of any damages awarded to a person because of Section 1029.8 of the Code of Civil Pro-
+D) All of the above
+
+3. How does the CA Insurance Code define an "insurance policy"?
+a) Terms agent and insured have agreed upon
+b) Signed document for your records
+C) The written instrument, in which a contract of insurance is set forth
+d) An insurance company's rules regarding insuring property
+
+4. An intentional and fraudulent omission, on the part of one insured, to communicate information of matters proving or
+tending to prove the falsity of a warranty, entitles the insurer to...
+A) Rescind
+b) Reevaluate the policy
+c) Prorate payment
+d) Press charges
+
+5. Some information does NOT need to be communicated in an insurance contract and is not considered concealment. This
+includes:
+a) Known information
+b) Information that should be known
+c) Information which the other party waives
+d) Information that is not material to the risk
+E) All of the above
+
+6. A warranty may be:
+a) Expressed
+b) Implied
+c) Cancelled
+D) A and B
+
+7. The of concealment is the rule used to determine the importance of a misrepresentation
+a) Extent
+B) Materiality
+c) Intent
+d) None of these
+
+8. When can a representation be altered or withdrawn?
+A) Before the insurance is effected, but not afterwards
+b) When both parties agree
+c) With a written request
+d) A representation can never be altered or withdrawn.
+
+9. A representation is false when...
+A) The facts fail to correspond with its assertions or stipulations
+b) Two or more people confirm it is false
+c) There is written proof
+d) A judge rules it is
+
+10. A representation cannot qualify as an express provision in a contract of insurance, but it may qualify as an
+a) Additional information
+B) Implied warranty
+c) Addendum
+d) None of these
+
+11. An insurer (officer, agent, broker, solicitor) shall not issue, circulate or use any statement that is known, or should be known, to be misrepresentation of the following:
+a) The terms of a policy issued issue or negotiated by the insurer
+b) The benefits or privileges promised in the policy
+c) The future dividends payable under the policy
+D) All of the above
+
+12. A person shall not make any statement that is known, or should have been know, to be misrepresentation to any other person or policy holder for the following purposes:
+a) Inducing or tending to induce the other person to take out a policy of insurance
+b) Refusing to accept a policy and instead take out a policy under another insurer
+c) Inducing or tending to induce the policyholder to lapse, forfeit, or surrender his/her insurance
+D) All of the above
+
+13. Any person who violated the CA Code provisions against misrepresentation is punishable by:
+a) A fine up to $25,000
+D) Imprisonment in a county jail for up to one year
+c) Possible license suspension up to three years
+d) All of the above
+
+14. The six required specifications for all insurance policies include: The parties between whom the contract is made, The property or life insured, The interest of the insured in property insured (if not the owner), The risk insured against, The period during which the insurance is to continue, and
+A) A statement of the premium or a statement of the basis and rates upon which the final premium is to be determined
+b) A list of all possible beneficiaries of the policy
+c) A standard document outlining the CA Insurance Code rules and regulations that relate to the policy
+d) A liability waiver protecting the agent/broker/insurer issuing the policy
+
+15. The financial rating of the insurer is NOT required to be specified in the insurance policy.
+A) True
+b) False
+
+16. When does an insurer have the right of rescission?
+a) Intentional and fraudulent omission
+b) False material representation
+c) Violation of material warranty or provision
+D) All of the above
+
+17. Concealment, whether intentional or unintentional, entitles the injured party to rescind insurance.
+A) True
+b) False
+
+18. "Transact" as applied to insurance includes any of the following:
+a) Solicitations & Negotiations
+b) Execution of a contract of insurance.
+c) Transaction of matters subsequent to execution of the contract and arising out of it.
+D) All of the above.
+
+19. A person shall not solicit, negotiate, or effect contracts of insurance, or act in any of the capacities defined in Article 1 (commencing with Section 1621) unless the person holds a valid license from the commissioner authorizing the person to act in that capacity.
+A) True
+b) False
+
+20. An insurance other than life insurance. means a person authorized, by and on behalf of an insurer, to transact all classes of insurance
+a) Broker
+B) Agent
+c) Representative
+d) Professional
+
+21. No insurer shall participate in any plan to offer or effect any kind or kinds of insurance or annuities in this state as an inducement to without any separate charge to the insured for such insurance.
+a) The purchase of any property
+b) The rental of any property
+c) Services
+D) All of the above
+
+22. Every individual and organization licensee and every applicant for such a license shall file with the commissioner in writing the true name of the individual or organization and also all fictitious names under which he conducts or in tends to conduct his business and after licensing shall file with the commissioner any change in or discontinuance of such names.
+A) True
+b) False
+
+23. A person who is licensed in this state as an insurance agent or broker, advertises insurance on the Internet, and transacts insurance in this state, shall identify all of the following information on the Internet
+a) His or her name as filed with the commissioner
+b) The state of his or her domicile and principal place of business.
+c) His or her license number.
+D) All of the above
+
+24. All funds received by any person acting as a licensee as premium or return premium on or under any policy of insurance or undertaking of bail, are received and held by that person in his or her fiduciary capacity. Any such person who diverts or appropriates those fiduciary funds to his or her own use is guilty of theft and...
+a) Perjury
+b) Must return those funds
+C) Punishable for theft as provided by law
+d) None of the above
+
+25. It is a misdemeanor to refuse to deliver any books, records, or assets to the Commissioner once a seizure order has been executed in an insolvency proceeding
+A) True
+b) False
+
+26. What are the main types of Managed Care Plans?
+a) HMO
+b) EPO
+c) PPO
+D) All of the above
+
+27. All of the following are Consumer Driven Health Plans (CDHPs) except:
+a) Point of Service (POS)
+B) Health Driven Plan
+c) Medical Savings Accounts
+d) High Deductible Health Plans
+
+28. Pediatric Dental and Vision benefits are not mandatory health insurance contract issues.
+a) True
+B) False
+
+29. Which of the following is not an underwriting consideration for large group health insurance plans?
+a) Group Size
+b) Prior Claims made
+C) Marital Status
+d) Occupational class of applicants
+
+30. Adult dental is an optional coverage under Obamacare.
+A) True
+b) False
+
+31. What is the max age for children to remain on their parents' health insurance policy?
+a) 18
+b) 23
+C) 25
+d) Children can remain on their parents' health plan as long as they wish
+
+32. A person can have more than one Medicare Supplement plan
+a) True
+B) False
+
+33. All of the following are rate-making components, except:
+a) Morbidity
+b) Insurer expenses
+c) Investment Return
+D) All of the above are rate-making components
+
+34. All of the following are elements of negligence, except:
+a) Breach
+b) Duty
+C) Cause & Effect
+d) Unbroken chain
+
+35. Ownership of most property and liability policies cannot be assigned without prior approval of the insurance company
+A) True
+b) False
+
+36. Which of the following is not a Common Auto Endorsement?
+a) Joint Ownership
+b) Towing and labor Coverage
+c) Limited Mexico Coverage Endorsement
+D) Extended Impact Coverage
+
+37. Which of the following is a Common Endorsement to a Homeowners' Policy?
+a) Additional Residence Rented to Others
+b) Personal Injury Endorsement
+c) Inflation Guard Endorsement
+D) All of the above are common endorsements
+
+38. All of the following Causes of Loss are excluded from the Commercial Property Policy, except:
+a) Earth Movement
+b) Ordinance or Law
+c) Tidal Waves
+D) All of the above are excluded
+
+39. A building is considered vacant when there is insufficient business personal property (BPP) to conduct customary op-
+erations and/or 70 percent of the total square footage is not rented
+A) True
+b) False
+
+40. Business Income and Extra expense coverages are available through the National Flood Insurance Program (NFIP)
+a) True
+B) False
+
+41. With a life only license, i can sell:
+a) Life insurance
+b) Annuities
+c) Final expense
+D) All of the above
+
+42. Insurance underwriting means to go through the policy and make sure it is fully filled out
+a) True
+B) False
+
+43. A client's paramedical exam can be done by local paramedics at any fire station.
+a) True
+B) False
+
+44. All of the following are methods of managing risk, except:
+a) Retention
+b) Avoidance
+c) Reduction
+D) Detection
+
+45. When submitting a policy to your carrier it is the agent's job as a field underwriter to:
+a) make sure the application is filled out as accurately and truthfully as possible.
+b) The application forms are fully filled out to the best of your ability
+c) Know that other information may be collected for your client (credit report, Dr.'s statement, dmv report)
+D) All of the above
+
+46. Who can be a party to an annuity?
+a) Beneficiary
+b) Owner
+c) Annuitant
+D) All of the above
+
+47. A cost of living rider will automatically increase my client's benefits as they age.
+a) True
+B) False
+
+48. What is the purpose of insurance underwriting?
+A) Prevention of adverse selection and to properly classify risks.
+b) Insure the population in the middle as to save money when granting polices.
+c) Create an algorithm that fits most clients but not all.
+d) Create policies for all types of people at fair price
+
+49. For workers under the age of 24 to obtain social security's fulling insured status they must have:
+A)б credits in the last 3 years.
+b) 6 credits in the last 6 years.
+c) 3 credits at anytime.
+d) 6 credits at anytime.
+
+50. At what age must additional credits be required to obtain "currently insured" status based on workers age at time of
+disability.
+a) 18
+b) 21
+C) 24
+d) 25

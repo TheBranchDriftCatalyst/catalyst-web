@@ -1,0 +1,37 @@
+.container {
+  padding-top: spacing(1);
+}
+
+.keyline {
+  width: 75%;
+  margin: 2px 0 5px;
+  border-top: 1px solid $primary-color;
+}
+
+.pull-left {
+  float: left;
+}
+
+.pull-right {
+  float: right;
+}
+
+.clearfix {
+  @include clearfix();
+}
+
+.header_pic {
+  margin-top: -15px;
+  margin-right: 10px;
+
+  img {
+    height: $profile-pic-size;
+    width: $profile-pic-size;
+    border-radius: 10%;
+    border: 2px solid $primary-color;
+  }
+}
+
+.summary {
+  margin: spacing(1) 0 spacing(1);
+}
