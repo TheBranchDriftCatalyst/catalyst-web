@@ -9,7 +9,7 @@ import "@/catalyst-ui/global.css";
 // import CatalystHeader from "catalyst-ui/dist/components/CatalystHeader/CatalystHeader";
 import './3portfolio.css';
 import './globals.css';
-import NavigationMenuItem from "./misc/MiscNavigationItemDropdown";
+import MiscNavigationSection from "./misc/NavigationItem";
 
 
 const titles = [
@@ -42,12 +42,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html className="theme-catalyst dark" lang="en" suppressHydrationWarning>
+    <html className="theme-catalyst dark" lang="en">
       <body>
         <CatalystHeader
           title="Knowledge Dump"
           navigationItems={[
-            <NavigationMenuItem />
+            <MiscNavigationSection key="1" />
             // <NavigationItem key="2" title="Other Stuff" links={_sampleLinkObjects} />,
           ]}
         />

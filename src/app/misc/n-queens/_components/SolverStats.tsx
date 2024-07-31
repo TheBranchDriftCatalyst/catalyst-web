@@ -1,4 +1,5 @@
-import { Button } from "@/catalyst-ui/ui";
+// import { Button } from "@/catalyst-ui/ui";
+import Button from "@/catalyst-ui/ui/button";
 import {
   CardContent,
   CardDescription,

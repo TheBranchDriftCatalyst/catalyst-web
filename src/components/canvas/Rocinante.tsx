@@ -2,10 +2,10 @@ import React, { Suspense } from "react";
 import { Canvas } from "@react-three/fiber";
 import {OrbitControls, OrthographicCamera, Preload, useGLTF} from "@react-three/drei";
 
-import CanvasLoader from "../Loader";
+import CanvasLoader from "../../app/about/_components/Loader";
 
 const Rocinante = () => {
-  const rocinante = useGLTF("./rocinante/scene.gltf");
+  const rocinante = useGLTF("./tachi/scene.gltf");
 
   return (
     <primitive object={rocinante.scene} rotation-x={0} />

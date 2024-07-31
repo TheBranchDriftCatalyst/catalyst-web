@@ -1,3 +1,4 @@
+"use client";
 // import Queen from './queen.svg'
 import { ReactElement, useMemo } from "react";
 import { useBoard } from "./BoardContext";

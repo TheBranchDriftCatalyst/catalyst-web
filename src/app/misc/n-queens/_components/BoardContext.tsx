@@ -1,3 +1,4 @@
+"use client";
 import Debug from "debug";
 import { cloneDeep } from "lodash";
 import React, {
